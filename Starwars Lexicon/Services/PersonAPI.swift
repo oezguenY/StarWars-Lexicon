@@ -30,6 +30,8 @@ class PersonApi {
                 // we need it to be of type dictionary
                 // the key of json Data are ALWAYS Strings, while their values may be of many different types
                 guard let json = jsonAny as? [String:Any] else { return }
+                let person = self.parsePersonManual(json: json)
+                print(person.name)
                 
             } catch {
                 debugPrint(error.localizedDescription)
@@ -38,4 +40,23 @@ class PersonApi {
         }
         task.resume()
     }
+    
+    private func parsePersonManual(json:[String:Any]) -> Person {
+        let name = json["name"] as? String ?? ""
+        let height = json["height"] as? String ?? ""
+        let mass = json["mass"] as? String ?? ""
+        let hair = json["hair_color"] as? String ?? ""
+        let birthYear = json["birth_year"] as? String ?? ""
+        let gender = json["gender"] as? String ?? ""
+        let homeworldUrl = json["homeworld"] as? String ?? ""
+        let filmUrls = json["films"] as? [String] ?? [String]()
+        let vehicleUrls = json["films"] as? [String] ?? [String]()
+        let starshipUrls = json["starships"] as? [String] ?? [String]()
+        
+        
+        let person = Person(name: name, gender: gender, birthYear: birthYear, mass: mass, height: height, hair: hair, homeWorld: homeworldUrl, films: filmUrls, vehicles: vehicleUrls, starships: starshipUrls)
+        return person
+        
+    }
+    
 }

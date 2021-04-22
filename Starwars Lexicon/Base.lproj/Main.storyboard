@@ -201,6 +201,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rFg-ha-2Ei"/>
+                    <connections>
+                        <outlet property="birthYear" destination="hSO-dY-Bap" id="EPn-UA-Dd1"/>
+                        <outlet property="genderLbl" destination="2GN-TI-mfD" id="T92-Re-VfA"/>
+                        <outlet property="hairLbl" destination="00f-XQ-Sm8" id="sXJ-tx-lv5"/>
+                        <outlet property="heightLbl" destination="et3-fH-5Jz" id="dCx-eG-bST"/>
+                        <outlet property="massLbl" destination="hiB-hZ-wo0" id="jjF-ww-H1m"/>
+                        <outlet property="nameLbl" destination="eOe-qz-kfv" id="8ma-wK-uNy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
