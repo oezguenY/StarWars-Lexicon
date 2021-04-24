@@ -14,8 +14,7 @@ import SwiftyJSON
 
 class PersonApi {
     
-    
-    // Web request with Alamofire and SwiftyJSON
+    // Web request with AlamoFire and Codable
     func getRandomPersonAlamo(id: Int, completion: @escaping (Person?) -> Void) {
         guard let url = URL(string: "\(PERSON_URL)\(id)") else { return }
             // once the url request is completed, we have access to the data, response and error
@@ -27,9 +26,10 @@ class PersonApi {
             }
             
             guard let data = response.data else { return completion(nil) }
+            let jsonDecoder = JSONDecoder()
             do {
-                let json = try JSON(data: data)
-                let person = self.parsePersonSwifty(json: json)
+                // we are telling it what type we want to get out of the data we put in
+                let person = try jsonDecoder.decode(Person.self, from: data)
                 completion(person)
             } catch {
                 debugPrint(error.localizedDescription)
@@ -38,6 +38,32 @@ class PersonApi {
         }
         
     }
+    
+    
+    
+    // Web request with Alamofire and SwiftyJSON
+//    func getRandomPersonAlamo(id: Int, completion: @escaping (Person?) -> Void) {
+//        guard let url = URL(string: "\(PERSON_URL)\(id)") else { return }
+//            // once the url request is completed, we have access to the data, response and error
+//        Alamofire.request(url).responseJSON { (response) in
+//            if let error = response.result.error {
+//                debugPrint(error.localizedDescription)
+//                completion(nil)
+//                return
+//            }
+//
+//            guard let data = response.data else { return completion(nil) }
+//            do {
+//                let json = try JSON(data: data)
+//                let person = self.parsePersonSwifty(json: json)
+//                completion(person)
+//            } catch {
+//                debugPrint(error.localizedDescription)
+//                completion(nil)
+//            }
+//        }
+//
+//    }
     
     
     
