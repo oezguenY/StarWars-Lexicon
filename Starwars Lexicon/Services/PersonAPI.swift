@@ -7,11 +7,35 @@
 
 
 import Foundation
+import Alamofire
 
 // class responsible for handling the person data
 
 class PersonApi {
-
+    
+    // Web request with Alamofire
+    
+    
+    func getRandomPersonAlamo(id: Int, completion: @escaping (Person?) -> Void) {
+        guard let url = URL(string: "\(PERSON_URL)\(id)") else { return }
+            // once the url request is completed, we have access to the data, response and error
+        Alamofire.request(url).responseJSON { (response) in
+            if let error = response.result.error {
+                debugPrint(error.localizedDescription)
+                completion(nil)
+                return
+            }
+            
+            guard let json = response.result.value as? [String: Any] else { return completion(nil) }
+            let person = self.parsePersonManual(json: json)
+            completion(person)
+            
+        }
+        
+    }
+    
+    
+        // web request with URLSession
     func getRandomPersonUrlSession(id: Int, completion: @escaping (Person?) -> Void) {
         guard let url = URL(string: "\(PERSON_URL)\(id)") else { return }
             // once the url request is completed, we have access to the data, response and error

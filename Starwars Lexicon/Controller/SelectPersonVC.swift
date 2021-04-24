@@ -37,7 +37,7 @@ class SelectPersonVC: UIViewController {
         let random = Int.random(in: 1...87)
         
     
-            self.personApi.getRandomPersonUrlSession(id: random) { person in
+            self.personApi.getRandomPersonAlamo(id: random) { person in
                     if let person = person {
                             self.nameLbl.text = person.name
                             self.heightLbl.text = person.height

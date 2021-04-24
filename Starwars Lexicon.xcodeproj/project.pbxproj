@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E6DE74C2E8C62273440EB8B /* Pods_Starwars_Lexicon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7222F56D606C11D8241C9408 /* Pods_Starwars_Lexicon.framework */; };
 		E31DC4002630BF6D000C56E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31DC3FF2630BF6D000C56E8 /* AppDelegate.swift */; };
 		E31DC4022630BF6D000C56E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31DC4012630BF6D000C56E8 /* SceneDelegate.swift */; };
 		E31DC4042630BF6D000C56E8 /* SelectPersonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31DC4032630BF6D000C56E8 /* SelectPersonVC.swift */; };
@@ -23,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64CC16EC786748CD5D21FCA8 /* Pods-Starwars Lexicon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Starwars Lexicon.release.xcconfig"; path = "Target Support Files/Pods-Starwars Lexicon/Pods-Starwars Lexicon.release.xcconfig"; sourceTree = "<group>"; };
+		7222F56D606C11D8241C9408 /* Pods_Starwars_Lexicon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Starwars_Lexicon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A293CF76A4BC2C354D5D2369 /* Pods-Starwars Lexicon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Starwars Lexicon.debug.xcconfig"; path = "Target Support Files/Pods-Starwars Lexicon/Pods-Starwars Lexicon.debug.xcconfig"; sourceTree = "<group>"; };
 		E31DC3FC2630BF6D000C56E8 /* Starwars Lexicon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Starwars Lexicon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E31DC3FF2630BF6D000C56E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E31DC4012630BF6D000C56E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E6DE74C2E8C62273440EB8B /* Pods_Starwars_Lexicon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 			children = (
 				E31DC3FE2630BF6D000C56E8 /* Starwars Lexicon */,
 				E31DC3FD2630BF6D000C56E8 /* Products */,
+				ECFDA50E5B3B20D187D8AA28 /* Pods */,
+				F067060CC9AAA94C31C9DC4A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +151,24 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		ECFDA50E5B3B20D187D8AA28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A293CF76A4BC2C354D5D2369 /* Pods-Starwars Lexicon.debug.xcconfig */,
+				64CC16EC786748CD5D21FCA8 /* Pods-Starwars Lexicon.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F067060CC9AAA94C31C9DC4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7222F56D606C11D8241C9408 /* Pods_Starwars_Lexicon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E31DC4102630BF71000C56E8 /* Build configuration list for PBXNativeTarget "Starwars Lexicon" */;
 			buildPhases = (
+				EF6261764F93DCACE517A73D /* [CP] Check Pods Manifest.lock */,
 				E31DC3F82630BF6D000C56E8 /* Sources */,
 				E31DC3F92630BF6D000C56E8 /* Frameworks */,
 				E31DC3FA2630BF6D000C56E8 /* Resources */,
+				28C7536717CDA352FB9F4C31 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -211,6 +238,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28C7536717CDA352FB9F4C31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Starwars Lexicon/Pods-Starwars Lexicon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Starwars Lexicon/Pods-Starwars Lexicon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Starwars Lexicon/Pods-Starwars Lexicon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF6261764F93DCACE517A73D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Starwars Lexicon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E31DC3F82630BF6D000C56E8 /* Sources */ = {
@@ -367,6 +436,7 @@
 		};
 		E31DC4112630BF71000C56E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A293CF76A4BC2C354D5D2369 /* Pods-Starwars Lexicon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -386,6 +456,7 @@
 		};
 		E31DC4122630BF71000C56E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64CC16EC786748CD5D21FCA8 /* Pods-Starwars Lexicon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
