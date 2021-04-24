@@ -20,23 +20,39 @@ class SelectPersonVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        personApi.getRandomPersonUrlSession { person in
-            if let person = person {
-                print(person.name)
-            }
-        }
     }
     
-    // the closure is derived from this:
-    //    func makeSomethingWithPerson(person: Person?) -> Void {
-    //        if let person = person {
-    //            print(person.name)
-    //        }
-    //    }
+    @IBAction func randomClicked(_ sender: Any) {
+        
+        // the closure is derived from this:
+        //    func makeSomethingWithPerson(person: Person?) -> Void {
+        //        if let person = person {
+        //            print(person.name)
+        //        }
+        //    }
+        
+        // and that's how we called the function
+        // personApi.getRandomPersonUrlSession(completion: makeSomethingWithPerson)
+        
+        let random = Int.random(in: 1...87)
+        
     
-    // and that's how we called the function
-    // personApi.getRandomPersonUrlSession(completion: makeSomethingWithPerson)
+            self.personApi.getRandomPersonUrlSession(id: random) { person in
+                    if let person = person {
+                            self.nameLbl.text = person.name
+                            self.heightLbl.text = person.height
+                            self.massLbl.text = person.mass
+                            self.hairLbl.text = person.hair
+                            self.birthYear.text = person.birthYear
+                            self.genderLbl.text = person.gender
+                    }
+        }
+       
+    }
+    
+    }
     
     
-}
+
+    
 

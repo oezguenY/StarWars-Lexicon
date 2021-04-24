@@ -11,6 +11,7 @@ let BLACK_BG = #colorLiteral(red: 0.9972793932, green: 1, blue: 0.9537276191, al
 
 let URL_BASE = "https://agile-hollows-54349.herokuapp.com/"
 
-let PERSON_URL = URL_BASE + "people/1/"
+let PERSON_URL = URL_BASE + "people/"
+
 
 
