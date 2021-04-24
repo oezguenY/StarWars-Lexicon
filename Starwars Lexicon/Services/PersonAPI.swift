@@ -12,13 +12,14 @@ import Foundation
 
 class PersonApi {
     
-    func getRandomPersonUrlSession() {
+    func getRandomPersonUrlSession(completion: @escaping (Person?) -> Void) {
   
         guard let url = URL(string: PERSON_URL) else { return }
             // once the url request is completed, we have access to the data, response and error
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
                 debugPrint(error!.localizedDescription)
+                completion(nil)
                 return
             }
             
@@ -31,8 +32,7 @@ class PersonApi {
                 // the key of json Data are ALWAYS Strings, while their values may be of many different types
                 guard let json = jsonAny as? [String:Any] else { return }
                 let person = self.parsePersonManual(json: json)
-                print(person.name)
-                
+                completion(person)
             } catch {
                 debugPrint(error.localizedDescription)
                 return
