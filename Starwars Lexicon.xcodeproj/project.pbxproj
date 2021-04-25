@@ -26,6 +26,8 @@
 		E32534A626355FCA004A5CBC /* VehiclesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32534A526355FCA004A5CBC /* VehiclesVC.swift */; };
 		E32534A926355FD6004A5CBC /* StarshipsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32534A826355FD6004A5CBC /* StarshipsVC.swift */; };
 		E32534AC26355FE1004A5CBC /* FilmsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32534AB26355FE1004A5CBC /* FilmsVC.swift */; };
+		E32534AF26357A06004A5CBC /* Homeworld.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32534AE26357A06004A5CBC /* Homeworld.swift */; };
+		E32534B226357A55004A5CBC /* HomeworldApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32534B126357A55004A5CBC /* HomeworldApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		E32534A526355FCA004A5CBC /* VehiclesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesVC.swift; sourceTree = "<group>"; };
 		E32534A826355FD6004A5CBC /* StarshipsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipsVC.swift; sourceTree = "<group>"; };
 		E32534AB26355FE1004A5CBC /* FilmsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsVC.swift; sourceTree = "<group>"; };
+		E32534AE26357A06004A5CBC /* Homeworld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homeworld.swift; sourceTree = "<group>"; };
+		E32534B126357A55004A5CBC /* HomeworldApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworldApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				E31DC45126320A3A000C56E8 /* Person.swift */,
+				E32534AE26357A06004A5CBC /* Homeworld.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				E31DC44C2631C581000C56E8 /* PersonAPI.swift */,
+				E32534B126357A55004A5CBC /* HomeworldApi.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -302,6 +308,7 @@
 			files = (
 				E32534AC26355FE1004A5CBC /* FilmsVC.swift in Sources */,
 				E31DC4492631850B000C56E8 /* Constants.swift in Sources */,
+				E32534B226357A55004A5CBC /* HomeworldApi.swift in Sources */,
 				E32534A0263553E9004A5CBC /* FadeEnabledButton.swift in Sources */,
 				E31DC4042630BF6D000C56E8 /* SelectPersonVC.swift in Sources */,
 				E32534A626355FCA004A5CBC /* VehiclesVC.swift in Sources */,
@@ -310,6 +317,7 @@
 				E32534A926355FD6004A5CBC /* StarshipsVC.swift in Sources */,
 				E31DC4452631833B000C56E8 /* BackgroundView.swift in Sources */,
 				E31DC45226320A3A000C56E8 /* Person.swift in Sources */,
+				E32534AF26357A06004A5CBC /* Homeworld.swift in Sources */,
 				E31DC4022630BF6D000C56E8 /* SceneDelegate.swift in Sources */,
 				E31DC44D2631C581000C56E8 /* PersonAPI.swift in Sources */,
 			);

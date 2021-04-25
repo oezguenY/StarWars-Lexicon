@@ -13,7 +13,7 @@ class StarshipsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(person.name)
         // Do any additional setup after loading the view.
     }
     

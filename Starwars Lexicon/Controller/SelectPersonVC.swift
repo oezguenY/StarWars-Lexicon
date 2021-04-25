@@ -72,6 +72,7 @@ class SelectPersonVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "toHomeworld" {
             if let destination = segue.destination as? HomeworldVC {
                 destination.person = person
