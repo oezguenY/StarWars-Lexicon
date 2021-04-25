@@ -58,6 +58,8 @@ class SelectPersonVC: UIViewController {
         birthYear.text = person.birthYear
         genderLbl.text = person.gender
         
+        // we have a property observer for these buttons. Everytime they get enabled, we run code on them
+        
         homeworldButton.isEnabled = !person.homeWorld.isEmpty
         starshipsButton.isEnabled = !person.starships.isEmpty
         filmsButton.isEnabled = !person.films.isEmpty
