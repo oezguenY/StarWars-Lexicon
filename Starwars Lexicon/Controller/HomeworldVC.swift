@@ -8,10 +8,12 @@
 import UIKit
 
 class HomeworldVC: UIViewController {
+    
+    var person: Person!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      
         // Do any additional setup after loading the view.
     }
     

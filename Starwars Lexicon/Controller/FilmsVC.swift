@@ -8,6 +8,8 @@
 import UIKit
 
 class FilmsVC: UIViewController {
+    
+    var person: Person!
 
     override func viewDidLoad() {
         super.viewDidLoad()

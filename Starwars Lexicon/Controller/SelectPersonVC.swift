@@ -8,6 +8,7 @@
 import UIKit
 
 class SelectPersonVC: UIViewController {
+
     
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var heightLbl: UILabel!
@@ -21,6 +22,7 @@ class SelectPersonVC: UIViewController {
     @IBOutlet weak var filmsButton: UIButton!
     
     var personApi = PersonApi()
+    var person: Person?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,7 @@ class SelectPersonVC: UIViewController {
             self.personApi.getRandomPersonAlamo(id: random) { person in
                     if let person = person {
                         self.setUpView(person: person)
+                        self.person = person
                     }
         }
        
@@ -68,22 +71,25 @@ class SelectPersonVC: UIViewController {
         
     }
     
-    
-    @IBAction func homeworldClicked(_ sender: Any) {
-    }
-    
-    
-    @IBAction func vehiclesClicked(_ sender: Any) {
-    }
-    
-    
-    
-    @IBAction func starshipsClicked(_ sender: Any) {
-    }
-    
-    
-    
-    @IBAction func filmsClicked(_ sender: Any) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toHomeworld" {
+            if let destination = segue.destination as? HomeworldVC {
+                destination.person = person
+            }
+        } else if segue.identifier == "toVehicles" {
+            if let destination = segue.destination as? VehiclesVC {
+                destination.person = person
+            }
+            
+        } else if segue.identifier == "toStarships" {
+            if let destination = segue.destination as? StarshipsVC {
+                destination.person = person
+            }
+        } else if segue.identifier == "toFilms" {
+            if let destination = segue.destination as? FilmsVC {
+                destination.person = person
+            }
+        }
     }
     
     
