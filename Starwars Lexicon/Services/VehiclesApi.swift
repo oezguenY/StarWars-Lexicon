@@ -25,7 +25,9 @@ class VehiclesApi {
             
             do {
                 let homeworld = try jsonDecoder.decode(Vehicle.self, from: data)
-                completion(homeworld)
+                DispatchQueue.main.async {
+                    completion(homeworld)
+                }
             } catch {
                 debugPrint(error.localizedDescription)
                 completion(nil)

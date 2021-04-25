@@ -16,7 +16,7 @@ class PersonApi {
     
     // Web request with AlamoFire and Codable
     func getRandomPersonAlamo(id: Int, completion: @escaping (Person?) -> Void) {
-        guard let url = URL(string: "\(PERSON_URL)\(id)") else { return }
+        guard let url = URL(string: "\(PERSON_URL)\(1)") else { return }
             // once the url request is completed, we have access to the data, response and error
         Alamofire.request(url).responseJSON { (response) in
             if let error = response.result.error {

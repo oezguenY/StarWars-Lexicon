@@ -17,14 +17,22 @@ class VehiclesVC: UIViewController {
     @IBOutlet weak var speedLbl: UILabel!
     @IBOutlet weak var crewLbl: UILabel!
     @IBOutlet weak var passengersLbl: UILabel!
+    @IBOutlet weak var previousBtn: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
+    
     
     var person: Person!
     var vehiclesApi = VehiclesApi()
     var vehicles = [String]()
+    var currentVehicle = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // we made sure that there is a vehicle; You are only able to click on the button in the SelectPersonVC if there is at least one vehicle, allowing you to segue to the VehiclesVC
         vehicles = person.vehicles
+        nextBtn.isEnabled = vehicles.count > 1
+        previousBtn.isEnabled = false
+        // we are getting the url of the first vehicle in the vehicles array
         guard let firstVehicle = vehicles.first else { return }
         getVehicle(url: firstVehicle)
     }
@@ -49,10 +57,34 @@ class VehiclesVC: UIViewController {
     }
     
     @IBAction func previousBtnClicked(_ sender: Any) {
+        currentVehicle -= 1
+        setButtonState()
     }
     
     @IBAction func nextBtnClicked(_ sender: Any) {
+        currentVehicle += 1
+        setButtonState()
     }
+    
+    
+    func setButtonState() {
+        
+        if currentVehicle == 0 {
+            previousBtn.isEnabled = false
+        } else {
+            previousBtn.isEnabled = true
+        }
+        
+        if currentVehicle == vehicles.count - 1 {
+            nextBtn.isEnabled = false
+        } else {
+            nextBtn.isEnabled = true
+        }
+        
+        getVehicle(url: vehicles[currentVehicle])
+        
+    }
+    
     
     
 
