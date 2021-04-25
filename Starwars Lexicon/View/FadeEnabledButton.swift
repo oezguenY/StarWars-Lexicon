@@ -8,11 +8,14 @@
 import UIKit
 
 class FadeEnabledButton: UIButton {
-    
+
     //whenever the isEnabled property is set, we can do something with it in the didSet. This is a property observer
     override var isEnabled: Bool {
+        // when the isEnabled property was set...
         didSet {
+            //... to true....
             if isEnabled {
+                //...do this.
                 UIView.animate(withDuration: 0.2) {
                     self.alpha = 1.0
                 }
