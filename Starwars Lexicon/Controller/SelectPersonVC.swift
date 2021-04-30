@@ -65,7 +65,6 @@ class SelectPersonVC: UIViewController {
         
         homeworldButton.isEnabled = !person.homeWorld.isEmpty
         starshipsButton.isEnabled = !person.starships.isEmpty
-        filmsButton.isEnabled = !person.films.isEmpty
         vehiclesButton.isEnabled = !person.vehicles.isEmpty
         
         
@@ -84,10 +83,6 @@ class SelectPersonVC: UIViewController {
             
         } else if segue.identifier == "toStarships" {
             if let destination = segue.destination as? StarshipsVC {
-                destination.person = person
-            }
-        } else if segue.identifier == "toFilms" {
-            if let destination = segue.destination as? FilmsVC {
                 destination.person = person
             }
         }
